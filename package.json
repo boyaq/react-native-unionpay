@@ -15,5 +15,10 @@
     "react-native-unionpay",
     "otkurbiz"
   ],
+  "homepage": "https://github.com/OtkurBiz/react-native-unionpay",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OtkurBiz/react-native-unionpay.git"
+  },
   "license": "MIT"
 }
