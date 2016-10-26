@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4718D5B41DBF0CC3005FF0F1 /* RCTUnionpay.m in Sources */ = {isa = PBXBuildFile; fileRef = 4718D5B31DBF0CC3005FF0F1 /* RCTUnionpay.m */; };
+		4718D5B51DBF0CC3005FF0F1 /* RCTUnionpay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4718D5B21DBF0CC3005FF0F1 /* RCTUnionpay.h */; };
+		4718D5D11DBF1392005FF0F1 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4718D5D01DBF1392005FF0F1 /* libPaymentControl.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4718D5AD1DBF0CC3005FF0F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				4718D5B51DBF0CC3005FF0F1 /* RCTUnionpay.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4718D5AF1DBF0CC3005FF0F1 /* libRCTUnionpay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTUnionpay.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4718D5B21DBF0CC3005FF0F1 /* RCTUnionpay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTUnionpay.h; sourceTree = "<group>"; };
+		4718D5B31DBF0CC3005FF0F1 /* RCTUnionpay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTUnionpay.m; sourceTree = "<group>"; };
+		4718D5CE1DBF1392005FF0F1 /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
+		4718D5D01DBF1392005FF0F1 /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4718D5AC1DBF0CC3005FF0F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4718D5D11DBF1392005FF0F1 /* libPaymentControl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4718D5A61DBF0CC3005FF0F1 = {
+			isa = PBXGroup;
+			children = (
+				4718D5B11DBF0CC3005FF0F1 /* RCTUnionpay */,
+				4718D5B01DBF0CC3005FF0F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4718D5B01DBF0CC3005FF0F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4718D5AF1DBF0CC3005FF0F1 /* libRCTUnionpay.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4718D5B11DBF0CC3005FF0F1 /* RCTUnionpay */ = {
+			isa = PBXGroup;
+			children = (
+				4718D5B21DBF0CC3005FF0F1 /* RCTUnionpay.h */,
+				4718D5B31DBF0CC3005FF0F1 /* RCTUnionpay.m */,
+				4718D5CC1DBF1392005FF0F1 /* paymentcontrol */,
+			);
+			path = RCTUnionpay;
+			sourceTree = "<group>";
+		};
+		4718D5CC1DBF1392005FF0F1 /* paymentcontrol */ = {
+			isa = PBXGroup;
+			children = (
+				4718D5CD1DBF1392005FF0F1 /* inc */,
+				4718D5CF1DBF1392005FF0F1 /* libs */,
+			);
+			path = paymentcontrol;
+			sourceTree = "<group>";
+		};
+		4718D5CD1DBF1392005FF0F1 /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				4718D5CE1DBF1392005FF0F1 /* UPPaymentControl.h */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		4718D5CF1DBF1392005FF0F1 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				4718D5D01DBF1392005FF0F1 /* libPaymentControl.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4718D5AE1DBF0CC3005FF0F1 /* RCTUnionpay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4718D5B81DBF0CC3005FF0F1 /* Build configuration list for PBXNativeTarget "RCTUnionpay" */;
+			buildPhases = (
+				4718D5AB1DBF0CC3005FF0F1 /* Sources */,
+				4718D5AC1DBF0CC3005FF0F1 /* Frameworks */,
+				4718D5AD1DBF0CC3005FF0F1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCTUnionpay;
+			productName = RCTUnionpay;
+			productReference = 4718D5AF1DBF0CC3005FF0F1 /* libRCTUnionpay.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4718D5A71DBF0CC3005FF0F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Alim;
+				TargetAttributes = {
+					4718D5AE1DBF0CC3005FF0F1 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 28S9UHWVBD;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4718D5AA1DBF0CC3005FF0F1 /* Build configuration list for PBXProject "RCTUnionpay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4718D5A61DBF0CC3005FF0F1;
+			productRefGroup = 4718D5B01DBF0CC3005FF0F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4718D5AE1DBF0CC3005FF0F1 /* RCTUnionpay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4718D5AB1DBF0CC3005FF0F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4718D5B41DBF0CC3005FF0F1 /* RCTUnionpay.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4718D5B61DBF0CC3005FF0F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4718D5B71DBF0CC3005FF0F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4718D5B91DBF0CC3005FF0F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 28S9UHWVBD;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RCTUnionpay/paymentcontrol/libs",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../react-native/React/** $(SRCROOT)/../../react-native/Libraries/**";
+			};
+			name = Debug;
+		};
+		4718D5BA1DBF0CC3005FF0F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 28S9UHWVBD;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RCTUnionpay/paymentcontrol/libs",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../react-native/React/** $(SRCROOT)/../../react-native/Libraries/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4718D5AA1DBF0CC3005FF0F1 /* Build configuration list for PBXProject "RCTUnionpay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4718D5B61DBF0CC3005FF0F1 /* Debug */,
+				4718D5B71DBF0CC3005FF0F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4718D5B81DBF0CC3005FF0F1 /* Build configuration list for PBXNativeTarget "RCTUnionpay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4718D5B91DBF0CC3005FF0F1 /* Debug */,
+				4718D5BA1DBF0CC3005FF0F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4718D5A71DBF0CC3005FF0F1 /* Project object */;
+}

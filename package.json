@@ -1,0 +1,19 @@
+{
+  "name": "react-native-unionpay",
+  "version": "1.0.0",
+  "description": "react-native unionpay plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Alim Kirem",
+    "email": "uyson@qq.com"
+  },
+  "keywords": [
+    "unionpay",
+    "react-native-unionpay",
+    "otkurbiz"
+  ],
+  "license": "MIT"
+}

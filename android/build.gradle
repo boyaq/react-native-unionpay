@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion '24'
+  defaultConfig {
+    minSdkVersion 16
+    targetSdkVersion 22
+    versionCode 1
+    versionName "1.0"
+    ndk {
+      abiFilters "armeabi-v7a", "x86"
+    }
+  }
+    sourceSets.main{
+        //让AS识别libs下的.so第三方包
+        jniLibs.srcDirs =['libs']
+    }
+}
+
+dependencies {
+  compile 'com.facebook.react:react-native:+'
+  compile fileTree(dir: 'libs', include: ['**.*'])
+}
+
