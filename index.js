@@ -10,24 +10,11 @@ const {Unionpay} = NativeModules;
 // Event emitter to dispatch request and response from WeChat.
 const emitter = new EventEmitter();
 
-// NativeAppEventEmitter.addListener('UnionPay_Resp', resp => {
-//   console.warn(resp, "UnionPay_Resp")
-//   emitter.emit("UnionPay_Resp", resp);
-// });
 DeviceEventEmitter.addListener('UnionPay_Resp', resp => {
-  console.warn(resp, "UnionPay_Resp")
   emitter.emit("UnionPay_Resp", resp);
 });
-// Used only with promisify. Transform callback to promise result.
-function translateError(err, result) {
-  if (!err) {
-    return this.resolve(result);
-  }
-  if (typeof err === 'string') {
-    return this.reject(new Error(err));
-  }
-  this.reject(err);
-}
+
+
 export function isPaymentAppInstalled() {
 	return new Promise((resolve, reject) => {
 		Unionpay.isPaymentAppInstalled(result => {
