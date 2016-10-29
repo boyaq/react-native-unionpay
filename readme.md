@@ -11,7 +11,13 @@ react-native link react-native-unionpay
 - 在工程info.plist设置中添加一个URL Types回调协议(在UPPayDemo工程中使用“UPPayDemo”作为协议)，用于在支付完成后返回商户客户端。
 - http请求设置: 在Xcode7.0之后的版本中进行http请求时，需要在工程对应的plist文件中添加NSAppTransportSecurity  Dictionary 并同时设置里面NSAllowsArbitraryLoads 属性值为 YES
 - 添加协议白名单: 在Xcode7.0之后的版本中进行开发，需要在工程对应的plist文件中，添加LSApplicationQueriesSchemes  Array并加入uppaysdk、uppaywallet、uppayx1、uppayx2、uppayx3五个item
+- AppDelegate.m 的 下面 @end 前面添加下面代码
 
+```m
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  return [RCTLinkingManager application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+}
+```
 ## 	调用插件
 
 ```
@@ -55,4 +61,3 @@ CVN2：248
 证件号：510265790128303
 姓名：张三
 ```
-
