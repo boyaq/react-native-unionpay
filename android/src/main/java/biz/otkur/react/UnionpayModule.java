@@ -35,12 +35,9 @@ public class UnionpayModule extends ReactContextBaseJavaModule implements Activi
 
     Activity mCurrentActivity;
 
-
     public UnionpayModule(ReactApplicationContext context) {
         super(context);
         context.addActivityEventListener(this);
-
-
     }
 
     @Override
@@ -48,19 +45,14 @@ public class UnionpayModule extends ReactContextBaseJavaModule implements Activi
         return "RCTUnionpay";
     }
 
-
-
-
     @ReactMethod
     public void startPay(String tn, String mode, Callback callback) {
         int rs = UPPayAssistEx.startPay(this.getCurrentActivity(), null, null, tn, mode);
         if(UPPayAssistEx.PLUGIN_VALID == rs) {
             callback.invoke();
-        } else {
-
-        }
-
+        } else { }
     }
+
     @ReactMethod
     public void checkInstalled (Callback callback) {
         Boolean rs = UPPayAssistEx.checkInstalled(getReactApplicationContext());
@@ -69,18 +61,18 @@ public class UnionpayModule extends ReactContextBaseJavaModule implements Activi
 
     @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-        WritableMap params = Arguments.createMap();
-        if( data == null ){
-            params.putString("code", "fail");
-            getReactApplicationContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                    .emit("UnionPay_Resp", params);
-        }
-        String str =  data.getExtras().getString("pay_result");
+        // 无数据
+        if (data == null) return;
+        // 非银联支付窗体返回码
+        if (requestCode != 10) return;
 
+        String str = data.getExtras().getString("pay_result");
+        // 返回数据错误
+        if (str ==null || str.equals("") || str.length() == 0) return;
+
+        WritableMap params = Arguments.createMap();
         params.putString("code", str.toLowerCase());
         if (str.equalsIgnoreCase("success")) {
-
-
             // TODO: 10/25/16
             // 支付成功后，extra中如果存在result_data，取出校验
             // result_data结构见c）result_data参数说明
@@ -104,12 +96,12 @@ public class UnionpayModule extends ReactContextBaseJavaModule implements Activi
         } else if (str.equalsIgnoreCase("cancel")) {
             // TODO: 10/25/16
         }
-        getReactApplicationContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+        if (str.equalsIgnoreCase("success") || str.equalsIgnoreCase("fail") || str.equalsIgnoreCase("cancel")) {
+            getReactApplicationContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit("UnionPay_Resp", params);
+        }
     }
 
     @Override
-    public void onNewIntent(Intent intent) {
-
-    }
+    public void onNewIntent(Intent intent) { }
 }

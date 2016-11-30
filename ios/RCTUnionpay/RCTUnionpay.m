@@ -3,7 +3,7 @@
 //  RCTUnionpay
 //
 //  Created by Alim on 10/25/16.
-//  Copyright © 2016 Alim. All rights reserved.
+//  Copyright © 2016 Alim. All rights reserved. 
 //
 
 #import "RCTUnionpay.h"
@@ -21,13 +21,18 @@ RCT_EXPORT_MODULE();
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL:) name:@"RCTOpenURLNotification" object:nil];
     }
-    NSArray *urlTypes = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleURLTypes"];
-    NSArray *urlSchemes = [urlTypes.firstObject objectForKey:@"CFBundleURLSchemes"];
-    int size = [urlSchemes count];
-    if(size == 0 ) {
-        self.schemeStr = nil;
-    } else {
-        self.schemeStr = [urlSchemes firstObject];
+    self.schemeStr = nil;
+    NSArray *list = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleURLTypes"];
+    for (NSDictionary *item in list) {
+        NSString *name = item[@"CFBundleURLName"];
+        if ([name isEqualToString:@"unionpay"]) {
+            NSArray *schemes = item[@"CFBundleURLSchemes"];
+            if (schemes.count > 0)
+            {
+                self.schemeStr = [schemes firstObject];
+                break;
+            }
+        }
     }
     return self;
 }
@@ -40,19 +45,27 @@ RCT_EXPORT_MODULE();
 {
     NSString * aURLString =  [notification userInfo][@"url"];
     NSURL * url = [NSURL URLWithString:aURLString];
-    [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
-        
-        NSMutableDictionary *body;
-        if(data != nil) {
-            body = [data mutableCopy];
-        }
-        body = @{@"code" : code};
-       
-        [self.bridge.eventDispatcher sendDeviceEventWithName:@"UnionPay_Resp"
-                                                     body:body];
+    NSArray *schemes = [NSArray arrayWithObjects:@"uppaysdk", @"uppaywallet", @"uppayx1", @"uppayx2", @"uppayx3", self.schemeStr, nil];
+    BOOL canOpen = false;
+    for (NSString *scheme in schemes) {
+        canOpen = [aURLString hasPrefix:scheme];
+        if (canOpen) break;
+    }
+    if (canOpen) {
+        [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
 
-    }];
-     return YES;
+            NSMutableDictionary *body;
+            if(data != nil) {
+                body = [data mutableCopy];
+            }
+            body = @{@"code" : code};
+            
+            [self.bridge.eventDispatcher sendDeviceEventWithName:@"UnionPay_Resp"
+                                                            body:body];
+            
+        }];
+    }
+    return canOpen;
 }
 
 RCT_EXPORT_METHOD(startPay:(NSString *)tn mode:(NSString*)mode callback:(RCTResponseSenderBlock)callback)
