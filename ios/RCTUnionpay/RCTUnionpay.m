@@ -23,7 +23,7 @@ RCT_EXPORT_MODULE();
     }
     NSArray *urlTypes = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleURLTypes"];
     NSArray *urlSchemes = [urlTypes.firstObject objectForKey:@"CFBundleURLSchemes"];
-    int size = [urlSchemes count];
+    NSInteger size = [urlSchemes count];
     if(size == 0 ) {
         self.schemeStr = nil;
     } else {
@@ -42,7 +42,7 @@ RCT_EXPORT_MODULE();
     NSURL * url = [NSURL URLWithString:aURLString];
     [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
         
-        NSMutableDictionary *body;
+        NSDictionary *body;
         if(data != nil) {
             body = [data mutableCopy];
         }
@@ -58,18 +58,18 @@ RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(startPay:(NSString *)tn mode:(NSString*)mode callback:(RCTResponseSenderBlock)callback)
 {
     if(self.schemeStr == nil) {
-        callback(URL_SCHEMES_NOT_DEFINED);
+        callback(@[URL_SCHEMES_NOT_DEFINED]);
     }
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     UIViewController *rootViewController = window.rootViewController;
     Boolean result = [[UPPaymentControl defaultControl] startPay:tn fromScheme:self.schemeStr mode:mode viewController:rootViewController];
-    callback(result ?  @[[NSNull null]] : @"fail");
+    callback(result ?  @[[NSNull null]] : @[@"fail"]);
 }
 RCT_EXPORT_METHOD(isPaymentAppInstalled:(RCTResponseSenderBlock)callback)
 {
     Boolean result = [[UPPaymentControl defaultControl] isPaymentAppInstalled];
     
-    callback(result ? @"true" : @"false");
+    callback(result ? @[@"true"] : @[@"false"]);
 }
 @end

@@ -15,6 +15,13 @@
     "react-native-unionpay",
     "otkurbiz"
   ],
+  "dependencies": {
+    "es6-promisify": "3.0.0",
+    "events": "1.0.2"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.35"
+  },
   "homepage": "https://github.com/OtkurBiz/react-native-unionpay",
   "repository": {
     "type": "git",
