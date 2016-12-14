@@ -2,34 +2,21 @@
 
 import { NativeEventEmitter, NativeModules, Platform } from 'react-native';
 
-// import { EventEmitter } from 'events';
-
-
 const {Unionpay} = NativeModules;
 
-// Event emitter to dispatch request and response from WeChat.
-// const emitter = new EventEmitter();
-
-// DeviceEventEmitter.addListener('UnionPay_Resp', resp => {
-//   emitter.emit("UnionPay_Resp", resp);
-// });
 let hook = undefined;
 
 const UnionpayEmitter = new NativeEventEmitter(Unionpay)
 const subscription = UnionpayEmitter.addListener('UnionPay_Resp', (resp) => {
 	if(hook != undefined) hook(resp)
 	hook = undefined;
-	// emitter.emit("UnionPay_Resp", resp);
 })
 
 export function isPaymentAppInstalled() {
 	return new Promise((resolve, reject) => {
-		Unionpay.isPaymentAppInstalled(result => {
-			if(result === 'true') {
-				resolve(true)
-			} else {
-				reject("unionpay plugin is not installed")
-			}
+		Unionpay.isPaymentAppInstalled((err, result) => {
+		if (err) reject("unionpay plugin is not installed")
+		else resolve(true)
 		})
 	})
 }
