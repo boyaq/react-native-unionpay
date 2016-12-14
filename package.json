@@ -10,6 +10,11 @@
     "name": "Alim Kirem",
     "email": "uyson@qq.com"
   },
+  "files": [
+	  "ios",
+	  "android",
+	  "index.js"
+  ],
   "keywords": [
     "unionpay",
     "react-native-unionpay",
@@ -20,5 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/OtkurBiz/react-native-unionpay.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  }
 }

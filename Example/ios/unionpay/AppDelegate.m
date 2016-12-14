@@ -39,7 +39,7 @@
 }
 //@end之前
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  RCTLogInfo(@"url is 1 : %@", url)
+
   return [RCTLinkingManager application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 @end
