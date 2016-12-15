@@ -9,7 +9,7 @@ let hook = undefined;
 const UnionpayEmitter = new NativeEventEmitter(Unionpay)
 const subscription = UnionpayEmitter.addListener('UnionPay_Resp', (resp) => {
 	if(hook != undefined) hook(resp)
-	hook = undefined;
+		hook = undefined;
 })
 
 export function isPaymentAppInstalled() {

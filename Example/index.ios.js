@@ -9,4 +9,4 @@ import {
 } from 'react-native';
 import App from './App'
 
-AppRegistry.registerComponent('unionpay', () => App);
+AppRegistry.registerComponent('Example', () => App);

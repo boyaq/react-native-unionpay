@@ -1,13 +1,10 @@
 {
   "name": "react-native-unionpay",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react-native unionpay plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "events": "^1.1.0"
   },
   "author": {
     "name": "Alim Kirem",
@@ -29,6 +26,15 @@
     "url": "git+https://github.com/OtkurBiz/react-native-unionpay.git"
   },
   "license": "MIT",
-  "dependencies": {
+  "rnpm": {
+    "android": {
+    },
+    "ios": {
+      "sharedLibraries": [
+        "CFNetwork.framework",
+        "SystemConfiguration.framework",
+        "libz"
+      ]
+    }
   }
 }
