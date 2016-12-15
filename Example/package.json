@@ -9,7 +9,7 @@
 	"dependencies": {
 		"react": "15.4.1",
 		"react-native": "0.39.2",
-		"react-native-unionpay": "file:../"
+		"react-native-unionpay": "^1.0.3"
 	},
 	"devDependencies": {
 		"babel-jest": "17.0.2",
